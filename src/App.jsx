@@ -16,7 +16,10 @@ function App() {
   return (
     <div className="App">
       {loading ? (
-        <Placeholder />
+        <>
+          {profiles.length > 0 &&
+            profiles.map((profile) => <Placeholder key={profile.id} />)}
+        </>
       ) : (
         <>
           {profiles.length > 0 &&
